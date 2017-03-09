@@ -4,24 +4,24 @@ networks:
     driver: overlay
 services:
   proxy:
-    image: RegistryUrl/myshop/proxy:1.0
+    image: registrytest1-on.azurecr.io/proxy:17
     ports: ["80:80"]
     networks:
       - myshop
   products:
-    image: RegistryUrl/myshop/products-api:BuildNumber
+    image: registrytest1-on.azurecr.io/productsapi:17
     networks:
       - myshop
   ratings:
-    image: RegistryUrl/myshop/ratings-api:BuildNumber
+    image: registrytest1-on.azurecr.io/ratingsapi:17
     networks:
       - myshop
   recommandations:
-    image: RegistryUrl/myshop/recommandations-api:BuildNumber
+    image: registrytest1-on.azurecr.io/recommandationsapi:17
     networks:
       - myshop
   shop:
-    image: RegistryUrl/myshop/front:BuildNumber
+    image: registrytest1-on.azurecr.io/shopfront:17
     networks:
       - myshop
     environment:
